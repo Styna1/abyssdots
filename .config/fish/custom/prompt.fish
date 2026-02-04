@@ -16,6 +16,6 @@ function fish_prompt
 
     echo (prompt_pwd) $git_info
 
-    echo -n (set_color blue)""(set_color -b blue black)(whoami)(set_color normal)(set_color blue)" "(set_color brmagenta)"󰅂 "(set_color normal)
+    echo -n (set_color blue)""(set_color -b blue black)(whoami)(set_color normal)(set_color blue)" "(set_color brmagenta)"» "(set_color normal)
 
 end
