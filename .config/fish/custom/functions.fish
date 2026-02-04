@@ -18,7 +18,11 @@ function gcom --argument commitmsg
    git push
 end
 
-
+function dotfiles --argument dotmsg
+   git -C ~/dotfiles add ~/dotfiles
+   git -C ~/dotfiles commit -m "$dotmsg"
+   git -C ~/dotfiles push
+end
 
 ####
 #
