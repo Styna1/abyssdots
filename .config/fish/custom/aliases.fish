@@ -40,6 +40,8 @@ alias cleanup='sudo pacman -Rns (pacman -Qtdq)' # Cleanup orphaned packages
 alias please='sudo' # lol
 alias bigpkg="expac -H M '%m\t%n' | sort -h | nl" # Sort installed packages according to size in MB
 alias grep='grep --color=auto' # colored grep here
+alias hyprexit='systemctl restart sddm || exit; loginctl kill-user $(whoami)' # i cant go to sddm normally for some reason without it
+alias rm='rm -Iv'
 
 
 
