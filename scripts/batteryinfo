@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+BAT="/sys/class/power_supply/BAT0"
+
+capacity=$(<"$BAT/capacity")
+status=$(<"$BAT/status")
+
+current=$(<"$BAT/current_now" 2>/dev/null)
+voltage=$(<"$BAT/voltage_now" 2>/dev/null)
+
+if [[ -n "$current" && -n "$voltage" ]]; then
+    watts=$(echo "$current * $voltage / 1000000000000" | bc -l)
+    printf "%s%% | (%s) | %.2fW\n" "$capacity" "$status" "$watts"
+else
+    printf "%s%% | (%s)\n" "$capacity" "$status"
+fi

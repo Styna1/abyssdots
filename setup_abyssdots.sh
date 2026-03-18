@@ -106,7 +106,7 @@ echo "[Abyssdots] Setting up the shell..."
 
 chsh -s "$(which zsh)"
 cp "$HOME/dev/github/mystara/Abyssdots/.zshrc" "$HOME/.zshrc"
-
+mkdir -p ~/.config/hypr/pconfigs && touch ~/.config/hypr/pconfigs/monitors.conf
 
 echo "[Abyssdots] Shell Setup complete!"
 echo "To be continued....Setup of Abyss dotfiles by mystara is complete!"

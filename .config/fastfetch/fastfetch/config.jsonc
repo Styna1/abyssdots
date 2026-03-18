@@ -53,12 +53,6 @@
             "key": " ",
             "keyColor": "33" 
         },
-	{
-	     "type": "command",
-	     "key": "🔋",
-	     "text": "batteryinfo",
-	     "keyColor": "33"
-	},
         {
             "type": "command",
             "key": "󱂇 ",

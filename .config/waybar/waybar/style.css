@@ -1,0 +1,264 @@
+@import '../../.cache/wal/colors-waybar.css';
+
+/*
+Colors
+*/
+
+/* waybar area/group colors*/
+@define-color apps rgba(0, 0, 0, 0.6);
+@define-color quicklinks rgba(0, 0, 0, 0.4);
+@define-color workspaces rgba(0, 0, 0, 0.6);
+@define-color taskbar rgba(0, 0, 0, 0.4);
+@define-color clock @foreground;
+@define-color misc rgba(0, 0, 0, 0.4);
+@define-color timer rgba(0, 0, 0, 0.4);
+@define-color devices rgba(0, 0, 0, 0.6);
+@define-color system rgba(0, 0, 0, 0.4);
+/* workspace text colors */
+@define-color workspace_fg @foreground;
+@define-color act_wrk_fg rgba(0, 0, 0, 1);
+@define-color use_wrk_fg @color5;
+/* workspace button-background colors */
+@define-color workspace_bg rgba(0, 0, 0, 0.6);
+@define-color act_wrk_bg @foreground;
+/* taskbar button-background colors */
+@define-color taskbar_bg rgba(255, 255, 255, 0.2);
+/* updates-widget icon+text colors */
+@define-color updates_green #a3be8c;
+@define-color updates_yellow #ff9a3c;
+@define-color updates_red #dc2f2f;
+
+/*
+Waybar / main settings
+*/
+
+* {
+    font-family: "Fira Sans SemiBold";
+    font-weight: bold;
+    font-size: 12px;
+    min-height: 16px;
+}
+
+window#waybar {
+    color: @foreground;
+    background: transparent;
+}
+
+tooltip {
+    background: @background;
+    color: @foreground;
+    border-radius: 7px;
+    border-width: 0px;
+}
+
+/*
+Workspaces
+*/
+
+#workspaces {
+    padding: 4px 10px;
+    background: @workspaces;
+}
+
+#workspaces button:hover {}
+
+#workspaces button.active {
+    color: @act_wrk_fg;
+    background: @act_wrk_bg;
+    border: none;
+    padding: 1px 2px;
+    margin: 1px 4px;
+    transition: all 0.3s ease-in-out;
+}
+
+#workspaces button {
+    color: @workspace_fg;
+    background: @workspace_bg;
+    padding: 1px 2px;
+    margin: 1px 4px;
+    transition: all 0.3s ease-in-out;
+}
+
+#workspaces button:not(.empty):not(.active) {
+    color: @use_wrk_fg;
+    padding: 1px 2px;
+    margin: 1px 4px;
+}
+
+/*
+Other
+*/
+
+#clock,
+#window {
+    color: @workspace_fg;
+    background: @workspace_bg;
+}
+
+#mpris, #custom-media {
+    color: @workspace_fg;
+    background: @taskbar;
+}
+
+#misc {
+    background: @misc;
+}
+
+
+#devices {
+    background: @devices;
+}
+
+#system {
+    background: @system;
+}
+
+
+
+/*
+    ┏┓┏┓┳┳┓┳┳┓┏┓┳┓  ┏┓┏┓┳┓┳┓┳┳┓┏┓       ┓  ┳┳┓┏┓┳┓┏┓┳┳┓
+    ┃ ┃┃┃┃┃┃┃┃┃┃┃┃  ┃┃┣┫┃┃┃┃┃┃┃┃┓  ┏┓┏┓┏┫  ┃┃┃┣┫┣┫┃┓┃┃┃
+    ┗┛┗┛┛ ┗┛ ┗┗┛┛┗  ┣┛┛┗┻┛┻┛┻┛┗┗┛  ┗┻┛┗┗┻  ┛ ┗┛┗┛┗┗┛┻┛┗
+*/
+
+/* inactiv widget modules */
+#cpu,
+#memory,
+#mpris,
+#clock,
+/* group "system" widgets */
+#custom-updates,
+#custom-power,
+#custom-copyq,
+/* group "devices" widgets */
+#bluetooth,
+#pulseaudio,
+#wireplumber,
+#network,
+/* group "misc" widgets */
+#custom-misc,
+/* groups + custom-appmenu */
+#window,
+#misc,
+#devices,
+#system {
+    padding: 0px 10px;
+}
+
+/*
+Powerline Menu
+*/
+
+#l-clock,
+#r-clock,
+#l-window,
+#r-window,
+#l-workspaces,
+#r-workspaces,
+#l-misc,
+#r-misc,
+#l-media,
+#r-media,
+#l-devices,
+#r-devices,
+#l-system,
+#r-system {
+    background: transparent;
+    min-height: 0px;
+}
+
+/* Left side slashes */
+
+#l-window {
+    border-left: 15 solid transparent;
+    border-bottom: 30 solid @apps;
+    margin-left: 0;
+}
+
+#l-clock {
+    border-left: 15 solid transparent;
+    border-bottom: 30 solid @apps;
+    margin-left: 0;
+}
+
+#l-workspaces {
+    border-left: 15 solid transparent;
+    border-bottom: 30 solid @workspaces;
+    margin-left: 0;
+}
+
+#l-misc {
+    border-left: 15 solid transparent;
+    border-bottom: 30 solid @misc;
+    margin-left: 0;
+}
+
+#l-media {
+    border-left: 15 solid transparent;
+    border-bottom: 30 solid @misc;
+    margin-left: 0;
+}
+
+#l-devices {
+    border-left: 15 solid transparent;
+    border-bottom: 30 solid @devices;
+    margin-left: 0;
+}
+
+#l-system {
+    border-left: 15 solid transparent;
+    border-bottom: 30 solid @system;
+    margin-left: 0;
+}
+
+/* Right side slashes */
+
+#r-misc {
+    border-left: 15 solid @misc;
+    border-bottom: 30 solid transparent;
+    margin-right: 0;
+}
+
+#r-media {
+    border-left: 15 solid @misc;
+    border-bottom: 30 solid transparent;
+    margin-right: 0;
+}
+
+#r-window {
+    border-left: 15 solid @apps;
+    border-bottom: 30 solid transparent;
+    margin-right: 0;
+}
+
+#r-workspaces {
+    border-left: 15 solid @workspaces;
+    border-bottom: 30 solid transparent;
+    margin-right: 0;
+}
+
+#r-devices {
+    border-left: 15 solid @devices;
+    border-bottom: 30 solid transparent;
+    margin-right: 0;
+}
+
+#r-clock {
+    border-left: 15 solid @apps;
+    border-bottom: 30 solid transparent;
+    margin-right: 0;
+}
+
+#r-clock {
+    border-left: 15 solid @apps;
+    border-bottom: 30 solid transparent;
+    margin-right: 0;
+}
+
+/* 
+#r-system {
+border-left: 15 solid @system;
+border-bottom: 30 solid transparent;
+margin-right:0;
+}
+*/
